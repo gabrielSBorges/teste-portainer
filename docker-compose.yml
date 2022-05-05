@@ -13,4 +13,4 @@ services:
 
 networks:
   teste-portainer:
-    external: true
+    external: false
