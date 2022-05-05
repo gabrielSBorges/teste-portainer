@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-      - 8000:3000
+      - 8080:3030
     volumes:
       - ./teste-portainer:/app
     stdin_open: true
