@@ -1,16 +1,16 @@
-# docker-compose.yml 
 version: '3'
-
 services:
-  portainer:
-    image: portainer/portainer-ce:latest
-    container_name: teste
-    restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./portainer-data:/data
+  web:
+    build: .
     ports:
-      - 9000:9000
+      - 8000:3000
+    volumes:
+      - ./teste-portainer:/app
+    stdin_open: true
+    tty: true
+    networks:
+      - teste-portainer
+
+networks:
+  teste-portainer:
+    external: true
